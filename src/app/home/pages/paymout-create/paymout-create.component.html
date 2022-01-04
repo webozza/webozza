@@ -1,0 +1,24 @@
+<div class="loaded"><div *ngIf="data" [innerHTML]="data | safeHtml"></div></div>
+
+<div
+  class="container"
+  *ngIf="notFound"
+  style="margin-top: 300px;margin-bottom: 89px; "
+>
+  <div class="row justify-content-center">
+    <div class="col-md-8 PT-5 MT-5 PB-5 MB-5 ">
+      <div class="card box-shadow">
+        <div class="card-header"><h4>Bitcoin Address</h4></div>
+        <div class="card-body">
+          <h3>{{ errorMessage }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="loaded" style="margin-top: 300px;">
+  <div [innerHTML]="box | safeHtml"></div>
+</div> -->
+
+<app-preloader class="loader"></app-preloader>

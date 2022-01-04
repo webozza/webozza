@@ -1,0 +1,106 @@
+<section class="slider-content animate-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 slider-body text-center">
+                <h1 class="text-white">Add Bitcoin Payments to eCommerce Store</h1>
+                <h3 class="main-heading text-white">{{content.welcome_section.label}}</h3>
+                <div [innerHTML]="content.welcome_section.description| safeHtml"></div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="service aboutus" id="aboutus">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h3 class="sub-heading">{{content.our_history.label}}</h3>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-8 mt-5 mb-5 content-body text-center" *ngIf="content.our_history">
+                <div [innerHTML]="content.our_history.description | safeHtml"></div>
+            </div>
+            <div class="col-lg-12 col-md-12">
+                <h2 class="text-white">Crypto Payment Gateway & Processor</h2>
+                <div class="content-img">
+                    <img src="./assets/img/home/startselling.jpg" class="img-fluid" alt="Bitcoin Payment Gateway">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="service gray-bg">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-9 col-md-12 content-body text-center" *ngIf="content.secure_payment">
+                <h3 class="sub-heading font-weight-bolder">{{content.secure_payment.label}}</h3>
+            </div>
+        </div>
+        <div class="row align-items-center justify-content-center accept-bitcoin">
+            <div class="col-lg-12 col-md-12 col-sm-12  content-body text-center">
+                <div class="blue-box text-white row">
+                    <div class="col-md-3 col-sm-12">
+                        <img _ngcontent-c3="" src="./assets/img/home/noun_crypto_bag.png" alt="Crypto Background">
+                    </div>
+                    <div class="col-md-8 col-sm-12 mt-2 pt-2">
+                        <div [innerHTML]="content.promotion_text.description | safeHtml "></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center accept-bitcoin">
+            <div class="col-lg-12 col-md-12 content-body text-center ">
+                <div class="checkbox">
+                    <div [innerHTML]="content.promotion_checkbox.description | safeHtml "></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-8 mt-5 mb-5 content-body text-center" *ngIf="content.our_history">
+                <div class="main-heading ">
+                    <h3 class="sub-heading font-weight-bolder">How we Integrate</h3>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12">
+                <div class="content-img">
+                    <img src="./assets/img/home/coltmock1.png" class="img-fluid" alt="Product">
+                </div>
+                <div class=" text-center h-15">
+                    <p class="mb-5">
+                        our integration systen allows for a seamless button layout <br>
+                        that works with your design
+                    </p>
+                    <a href="/sign-up" class="lbtn lbtn-lg mt-3 mb-3">integrate now</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+<section class="service whatwedo">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6 col-md-12 text-center content-body" *ngIf="content.what_we_do">
+                <h3 class="sub-heading">{{content.what_we_do.label}}</h3>
+                <div class="mb-4 " [innerHTML]="content.what_we_do.description | safeHtml"></div>
+                <!-- <a routerLink="/contact" class="mt-4 lbtn lbtn-lg">Contact Us</a> -->
+                <div>
+                    <p class="partners-title">Integrate With Our Partners</p>
+                </div>
+                <img src="./assets/img/bigcommerce.png" class="img-fluid" alt="Big Commerce">
+                <img src="./assets/img/magento.png" class="img-fluid" alt="Magento">
+                <img src="./assets/img/wp.png" class="img-fluid" alt="Wp">
+                <!-- <img src="./assets/img/shopify.png" class="img-fluid" alt="shopify"> -->
+            </div>
+        </div>
+    </div>
+</section>
+<section class="service whatwedo gray-bg">
+    <contact-us></contact-us>
+</section>

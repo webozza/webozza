@@ -1,0 +1,144 @@
+<div class="container mb-5 pb-3">
+  <div class="row">
+    <div class="col-md-12 p-0">
+      <h5 class="section-title2 pl-3">Manage Account</h5>
+    </div>
+  </div>
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-6" #hasAlert></div>
+  </div>
+
+  <form class="row" [formGroup]="accountForm" (submit)="submitUpdateProfile()">
+    <div class="col-md-6 form-group">
+      <label for="">Name *</label>
+      <input type="text" formControlName="name" autocomplete="off" class="form-control">
+      <span *ngIf="accountForm.get('name').hasError('required') && accountForm.get('name').touched" class="errors">
+        <small> Name is required</small>
+      </span>
+    </div>
+
+    <div class="col-md-6 form-group">
+      <label for="">Website *</label>
+      <input type="text" formControlName="website" autocomplete="off" class="form-control">
+      <span *ngIf="accountForm.get('website').hasError('required') && accountForm.get('website').touched"
+        class="errors">
+        <small> Website is required</small>
+      </span>
+    </div>
+
+    <div class="col-md-6 form-group">
+      <label for="">Phone *</label>
+      <input type="text" formControlName="phone" autocomplete="off" class="form-control">
+      <span *ngIf="accountForm.get('phone').hasError('required') && accountForm.get('phone').touched" class="errors">
+        <small> Phone is required</small>
+      </span>
+    </div>
+
+    <div class="col-md-6 form-group">
+      <label for="">Reconciliation Reports Frequency *</label>
+
+      <select formControlName="account_invoice_transaction_frequency" class="form-control">
+        <option value='daily'>Daily</option>
+        <option value='weekly'>Weekly</option>
+        <option value='monthly'>Monthly</option>
+        <option value='never'>Never</option>
+      </select>
+    </div>
+
+    <div class="col-md-6 form-group">
+      <label for="">Address Line 1 *</label>
+      <input type="text" formControlName="address_line_1" autocomplete="off" class="form-control">
+      <span *ngIf="accountForm.get('address_line_1').hasError('required') && accountForm.get('address_line_1').touched"
+        class="errors">
+        <small> Address Line 1 is required</small>
+      </span>
+    </div>
+
+    <div class="col-md-6 form-group">
+      <label for="">Address Line 2</label>
+      <input type="text" formControlName="address_line_2" autocomplete="off" class="form-control">
+    </div>
+
+    <div class="col-md-6 form-group">
+      <label for="">City *</label>
+      <input type="text" formControlName="city" autocomplete="off" class="form-control">
+      <span *ngIf="accountForm.get('city').hasError('required') && accountForm.get('city').touched" class="errors">
+        <small> City is required</small>
+      </span>
+    </div>
+
+
+    <div class="col-md-6 form-group">
+      <label for="">State *</label>
+      <input type="text" formControlName="state" autocomplete="off" class="form-control">
+      <span *ngIf="accountForm.get('state').hasError('required') && accountForm.get('state').touched" class="errors">
+        <small> State is required</small>
+      </span>
+    </div>
+
+    <div class="col-md-6 form-group">
+      <label for="">Zip *</label>
+      <input type="text" formControlName="zip" autocomplete="off" class="form-control">
+      <span *ngIf="accountForm.get('zip').hasError('required') && accountForm.get('zip').touched" class="errors">
+        <small> Zip is required</small>
+      </span>
+    </div>
+
+    <div class="col-md-6">&nbsp;</div>
+
+    <div class="col-md-6 form-group">
+      <label for="">Wallet Provider Name *</label>
+      <input type="text" formControlName="wallet_provider" autocomplete="off" class="form-control">
+      <span
+        *ngIf="accountForm.get('wallet_provider').hasError('required') && accountForm.get('wallet_provider').touched"
+        class="errors">
+        <small> Wallet Provider Name is required</small>
+      </span>
+    </div>
+
+    <div class="col-md-6 form-group">
+      <label for="">Wallet Address *</label>
+      <input type="text" formControlName="wallet_address" autocomplete="off" class="form-control">
+      <span *ngIf="accountForm.get('wallet_address').hasError('required') && accountForm.get('wallet_address').touched"
+        class="errors">
+        <small> Wallet Address is required</small>
+      </span>
+    </div>
+
+
+
+    <div class="col-lg-12 ">
+      <div class="form-group text-center">
+        <button [disabled]="!accountForm.valid" type="submit"
+          class="btn theme-btn text-right defaulbtn-size mt-2">Update Profile
+        </button>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<div class="container mb-5 pb-3">
+  <div class="row">
+    <div class="col-md-12 p-0">
+      <h5 class="section-title2 pl-3">API Keys</h5>
+    </div>
+  </div>
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-6" #hasAlert></div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-6 form-group">
+      <label for="">Public API Key</label>
+      <span class="form-control"> {{ public_key }} </span> <br/><button (click)="regenerateKey('public')">Regenerate key</button>
+    </div>
+
+    <div class="col-md-6 form-group">
+      <label for="">Private API Key</label>
+      <span class="form-control">{{ private_key }} </span> <br/><button  (click)="regenerateKey('private')">Regenerate key</button>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,116 @@
+
+<div class="border border-dark rounded"> 
+<div class="container mb-5 pb-3 ">
+    <div class="row">
+      <div class="col-md-12 p-0">
+        <h5 class="section-title pl-3">Edit Profile</h5>
+      </div>
+    </div>
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-6" #hasAlert></div>
+    </div>
+  
+  <form class="row" [formGroup]="profileForm" (submit)="submitUpdateProfile()">
+    <div class="col-md-12 form-group">
+      <label for="">Email *</label>
+      <input type="text" formControlName="email" autocomplete="off" class="form-control">
+      <span *ngIf="profileForm.get('email').hasError('required') && profileForm.get('email').touched" class="errors">
+        <small> Email is required</small>
+      </span>
+    </div>
+
+    <div class="col-md-6 form-group">
+      <label for="">First Name *</label>
+      <input type="text" formControlName="first_name" autocomplete="off" class="form-control">
+      <span *ngIf="profileForm.get('first_name').hasError('required') && profileForm.get('first_name').touched"
+        class="errors">
+        <small> First Name is required</small>
+      </span>
+    </div>
+
+    <div class="col-md-6 form-group">
+      <label for="">Last Name *</label>
+      <input type="text" formControlName="last_name" autocomplete="off" class="form-control">
+      <span *ngIf="profileForm.get('last_name').hasError('required') && profileForm.get('last_name').touched"
+        class="errors">
+        <small> Last Name is required</small>
+      </span>
+    </div>
+    <div class="col-lg-12">
+      <div class="form-group text-center">
+        <button [disabled]="!profileForm.valid" type="submit"
+          class="btn theme-btn text-right defaulbtn-size mt-2">Update Profile
+          <i *ngIf="loading" class="fa fa-spinner ml-2 fa-spin"></i>
+        </button>
+      </div>
+    </div>
+
+  </form>
+</div>
+</div>
+ 
+
+<div class=" bg-grey">
+  
+</div>
+
+<div class="border border-dark rounded">
+<div class="container mb-5 pb-3 ">
+  <div class="row">
+    <div class="col-md-12 p-0">
+      <h5 class="section-title pl-3">Change Password</h5>
+    </div>
+  </div>
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-6" #hasAlert></div>
+  </div>
+  <form [formGroup]="updatePasswordForm" (submit)="submitUpdatePassword()" class="row justify-content-center">
+    <div class="col-lg-6 col-sm-10" id="pwd-container">
+      <div class="form-group">
+        <label for="id_new_password">New password</label>
+        <input formControlName="password" name="password" [type]="hide ? 'password' : 'text'"
+          class="form-control input-lg new-password">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}
+        </mat-icon>
+        <span
+          *ngIf="updatePasswordForm.get('password').hasError('required') && updatePasswordForm.get('password').touched"
+          class="errors">
+          <small>Password is required !</small>
+        </span>
+        <span
+          *ngIf="!updatePasswordForm.get('password').hasError('required') && updatePasswordForm.get('password').hasError('minlength')"
+          class="errors">
+          <small> Password must have at least
+            <strong>8</strong> character!</small>
+        </span>
+        <app-password-strength-bar *ngIf="updatePasswordForm.get('password').value"
+          [passwordToCheck]="updatePasswordForm.get('password').value" [showText]="true">
+        </app-password-strength-bar>
+      </div>
+      <div class="form-group">
+        <label for="confirm_new_password">Confirm new password</label>
+        <input formControlName="cnFpassword" [type]="hide ? 'password' : 'text'" class="form-control input-lg"
+          id="id_repeated_new_password">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}
+        </mat-icon>
+        <span
+          *ngIf="updatePasswordForm.get('cnFpassword').hasError('required') && updatePasswordForm.get('cnFpassword').touched"
+          class="errors">
+          <small>Password is required!</small>
+        </span>
+        <span
+          *ngIf=" updatePasswordForm.get('cnFpassword').value && updatePasswordForm.get('cnFpassword').value!==updatePasswordForm.get('password').value && updatePasswordForm.get('cnFpassword').touched"
+          class="errors">
+          <small>Passwords don't match!</small>
+        </span>
+      </div>
+      <div class="form-group text-center">
+        <button [disabled]="!updatePasswordForm.valid" type="submit"
+          class="btn theme-btn text-right defaulbtn-size mt-2">Change password
+          <i *ngIf="loading" class="fa fa-spinner ml-2 fa-spin"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+</div>

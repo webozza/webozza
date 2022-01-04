@@ -1,0 +1,38 @@
+<header class="header" id="page_top">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-5 col-4 logo">
+              <a routerLink="">
+                  <img src="./assets/img/home/logo.png">
+              </a>
+          </div>
+          <div class="col-lg-9 col-md-9 col-sm-12 col-12 menu large-menu">
+              <a  class="mobile-toggle"><i class="fa fa-bars"></i></a>
+              <ul class="menu-bar">
+                  <li *ngIf="!auth.authenticated;else isLogin"><a  routerLink="/sign-in">Sign in</a></li>
+                  <li><a (click)="navigate()" href="#aboutus">About us</a></li>
+                  <li><a (click)="navigate()" href="#contactus">Contact</a></li>
+                  <li *ngIf="!auth.authenticated"><a class="join-login" routerLink="/sign-up">Accept Bitcoin</a></li>
+                  <ng-template #isLogin>
+                    <li ><a class="join-login" (click)="logout()">Logout</a></li>
+                  </ng-template>
+                  <li *ngIf="auth.authenticated"> <a routerLink="/dashboard"> Dashboard</a></li>
+              </ul>
+          </div>
+          <div class="col-lg-9 col-md-9 col-sm-12 col-12 menu mobile-menu">
+              <a  class="mobile-toggle"><i class="fa fa-bars"></i></a>
+              <ul class="menu-bar">
+                <li *ngIf="!auth.authenticated;else isLogin"><a routerLink="/sign-in">Sign in</a></li>
+                  <li><a (click)="navigate()" href="#aboutus">About us</a></li>
+                  <li><a (click)="navigate()" href="#contactus">Contact us</a></li>
+                  <li *ngIf="!auth.authenticated;else isLogin"><a  routerLink="/sign-in">Login</a></li>
+                  <li *ngIf="!auth.authenticated"><a class="join-login" routerLink="/sign-up">Accept Bitcoin</a></li>
+                  <ng-template #isLogin>
+                    <li ><a class="join-login" (click)="logout()">Logout</a></li>
+                  </ng-template>
+                  <li *ngIf="auth.authenticated"> <a routerLink="/dashboard"> Dashboard</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</header>

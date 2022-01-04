@@ -1,0 +1,141 @@
+<div class="container pb-5 rounded border">
+
+
+  <div class="row" *ngIf="account">
+    <div class="col-md-12 p-0">
+      <h5 class="section-title pl-3">Dashboard</h5>
+    </div>
+
+    <div *ngIf="todayLoaded" class="col-md-12 mt-5 shadow">
+      <div class="row">
+        <p class="col-12">Your account analytics from the last 24 hours:</p>
+        <div class="col-lg-4 col-md-12">
+          <div class="balance-container" style="background: darkgray">
+            <p># of Invoices</p>
+            <div class="balance"> {{ today.invoices }} </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <div class="balance-container" style="background: brown">
+            <p># of Completed Invoices</p>
+            <div class="balance"> {{ today.invoices_completed }} </div>
+          </div>
+        </div>
+
+
+        <div class="col-lg-4 col-md-12">
+          <div class="balance-container" style="background: #36a3f7">
+            <p># of Expired Invoices</p>
+            <div class="balance"> {{ today.invoices_expired }} </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <div class="balance-container" style="background: #34bfa3">
+            <p>BTC Amount Proccessed</p>
+            <div class="balance"><i class="fab fa-bitcoin"></i> {{ today.btc_processed }} </div>
+            <i class="fab  icon fa-bitcoin"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    
+  <div class="row pt-8 pb-3 ">
+  
+    <!-- column 1 -->
+    <div class="col-md-12 col-lg-4">
+      <div [chart]="chart" class="guage"></div>
+    </div>
+
+    <!-- column 2 -->
+    <div class="col-md-12 col-lg-3 mb-4">
+      <p class="border-bottom"> Items</p>
+      <div class="border-bottom pt-4 pb-4">
+        <span class="dot"></span>
+        <span class="col2-Heading">Working</span>
+      </div>
+      <div class="border-bottom pt-4 pb-4">
+        <span class="dot"></span>
+        <span class="col2-Heading">Working</span>
+      </div>
+    </div>
+
+    <!-- column 3 -->
+    <div class="col-md-12 col-lg-3">
+      <p class="border-bottom clearfix"> 
+        <span class="float-left">Category</span>
+        <span class="float-right">Earned</span>
+      </p>
+      <div class="clearfix pt-4 pb-4 border-bottom">
+        <span class="float-left  ">
+          <span class="small-dot"></span>
+          <span class="col2-Heading">Item1</span>
+        </span>
+        <span class="float-right earning">$19.00</span>
+      </div>
+      <div class="clearfix pt-4 pb-4 border-bottom">
+        <span class="float-left ">
+          <span class="small-dot"></span>
+          <span class="col2-Heading">Item1</span>
+        </span>
+        <span class="float-right earning">$19.00</span>
+      </div>
+    </div>
+    <div class="col-md-12  col-lg-2  custom-p">
+
+      <div class="media border-bottom pt-4 pb-4 col-last">
+        <img src="../../../../assets/icons/salary.png" class="icon"> 
+        <div class="media-body pl-3">
+          <p class="font-weight-bolder">Total Earnings</p>
+          <span class="price">$180.00</span>
+        </div>
+      </div>
+
+      <div class="media border-bottom pt-4 pb-4 col-last">
+        <img src="../../../../assets/icons/handshake.svg" class="icon"> 
+        <div class="media-body pl-3">
+          <p class="font-weight-bolder">Item Earnings</p>
+          <span class="price">$159.00</span>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class=" bg-grey">
+  
+</div>
+
+<div class="container pb-5 rounded border">
+  <div class="row rounded">
+    <div class="col-md-12 p-0">
+      <h5 class="section-title pl-3">Integration Options</h5>
+    </div>
+  </div>
+    
+  <div class="row pt-8 pb-3  justify-content-center mx-auto">
+   
+    <div class="integration-column p-2">
+      <img src="../../../../assets/img/integration-1.png" height="250px" >
+    </div>
+    
+    <div class="integration-column p-2">
+      <img src="../../../../assets/img/integration-2.png" height="250px">
+     
+    </div>
+    
+      <div class="integration-column p-2">
+        <img src="../../../../assets/img/integration-3.png" height="250px">
+       
+    </div>
+    
+  </div>
+</div>

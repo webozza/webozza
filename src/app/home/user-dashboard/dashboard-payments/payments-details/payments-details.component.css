@@ -1,0 +1,23 @@
+.section-content {
+	min-height:150px;
+	background-color: #fff;
+	margin-bottom: 20px;
+	padding: 0px 0px 0;
+}
+.section-title {
+	padding: 15px 15px;
+	border-bottom: 1px solid #eee;
+	font-family: 'Open Sans', sans-serif !important;
+	font-weight: 600;
+}
+.status {
+	color: #fff;
+}
+.payment-detailsbody table tr th {
+  font-weight: 600;
+}
+.payment-detailsbody table tr th,
+.payment-detailsbody table tr td {
+ text-align: left !important;
+ border: none;
+}

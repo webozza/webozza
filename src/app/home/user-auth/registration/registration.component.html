@@ -1,0 +1,86 @@
+<section class="slider-content">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12 col-12 slider-body">
+        <h3></h3>
+
+      </div>
+    </div>
+  </div>
+</section>
+<section class="login-content">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-12">
+        <div class="login-inner">
+          <div class="login-left-side">
+            <div class="login-middle">
+              <div class="login-left-inner text-center">
+                <a class="text-stronger" routerLink="">
+                  <img src="./assets/img/logo.png" alt="logo">
+                </a>
+
+              </div>
+            </div>
+          </div>
+          <div class="login-right-side signup-right-side">
+            <h4 class="mt-0 pt-0">Sign Up</h4>
+            <div class="custom-alert" #hasAlert></div>
+            <form class="" [formGroup]="form" (submit)="signUp()">
+              <div class="input-group mb-1 mt-1">
+                <input style="width:85%" type="Email" formControlName="email" autocomplete="off" class="form-control" placeholder="Email">
+                <div>
+                  <span *ngIf="form.get('email').hasError('email') && !form.get('email').hasError('required')" class="errors">
+                    <small> Please enter a valid email address</small>
+                  </span>
+                  <span *ngIf="form.get('email').hasError('required') && form.get('email').touched" class="errors">
+                    <small> Email is required</small>
+                  </span>
+                </div>
+              </div>
+
+              <div class="input-group mb-1 mt-3">
+                  <input  style="width:85%" type="password" formControlName="password" autocomplete="off" class="form-control" placeholder="Password">
+                  <div>
+                    <span *ngIf="form.get('password').hasError('password') && !form.get('password').hasError('required')" class="errors">
+                      <small> Please enter a valid password</small>
+                    </span>
+                    <span *ngIf="form.get('password').hasError('required') && form.get('password').touched" class="errors">
+                      <small> Password is required</small>
+                    </span>
+                  </div>
+                </div>
+
+                
+                <div class="input-group mb-1 mt-1">
+                    <p class="terms-conditions">By clicking "I Agree" below you agree to be bound by the Coltpay <br><a routerLink="/terms-and-conditions">Terms and Conditions</a>
+                    </p>
+                    <div class="form-group form-check w-100">
+                        <input type="checkbox" style="margin-top: 7px;" class="form-check-input" formControlName="agree_terms_and_conditions" id="agree_terms_and_conditions">
+                        <label class="form-check-label pl-0" for="agree_terms_and_conditions">I agree</label>
+                      </div>
+                    
+                      <div>
+                      <span *ngIf="form.get('agree_terms_and_conditions').hasError('required') && form.get('agree_terms_and_conditions').touched" class="errors">
+                        <small> Agreeing to the Terms and Conditions is required</small>
+                      </span>
+                    </div>
+                  </div>
+    
+
+
+              <div class="row input-group mb-0 mt-1 m-0">
+                <div class="col-lg-12 text-center">
+                  <button [disabled]="!form.get('agree_terms_and_conditions').value" class="login-btn">
+                    <span>Register</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+

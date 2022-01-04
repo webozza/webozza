@@ -1,0 +1,242 @@
+<!-- <div class="container pb-5">
+  <div class="row">
+    <div class="col-md-12 p-0">
+      <h5 class="section-title pl-3">Basic Wordpress Integration</h5>
+    </div>
+
+    <p class="col-12">This guide will describe the simpliest wordpress Integration using a shortcode.</p>
+
+    <p class="col-12">Go to Account Profile > API Keys and genreate a new Public API key. These keys can not be viewed once they are
+      created so be sure to save it in a safe location. The Public API key can only be used to create invoices and is
+      safe to put on your website. </p>
+
+      <p class="col-12">Inside your WP admin panel go to Plugins > Add New. In the serach bar look up "ColtPay Commerce" and click install. After the plugin is installed click Activate.  </p>
+  
+      <p class="col-12">Once the plugin is installed and activated you can find the settings page under Settings > Coltpay. On this page you'll see two input boxes for the API keys found in Account Profile > API Keys. The public key is required. You do not need to enter the private key for the basic installation.   </p>
+
+    <div class="col-12">
+      <p> You can then insert this code snippet into any page or post.  </p>
+      <code>
+          [coltpay-payment id="" class="" amount="" currency=""]
+        </code>
+        
+        <p>Another example using most of the below parameters would look like this: </p>
+        <code>
+            [coltpay-payment id="" class="" amount="5.00" currency="usd" success_url="yoursite.com/success" cancel_url="yoursite.com/cancel" order_id="1"]
+          </code>
+  
+    </div>
+
+    <p class="col-12"> You can use the folowing parameters:</p>
+    <div class="col-12">
+      <ul>
+        <li><kbd>currency</kbd> - REQUIRED - 3 letter currency code i.e. usd, btc, mxn</li>
+        <li><kbd>price</kbd> - REQUIRED - The price of to match the currency</li>
+        <li><kbd>notification_url</kbd> - OPTIONAL - The URL you want us to send update notifications to.</li>
+        <li><kbd>order_id</kbd> - OPTIONAL - An optional order ID you want to attach your transaction to.</li>
+          <li><kbd>cancel_url</kbd> - OPTIONAL - The URL you want us to redirect the customer to if they cancel the
+            transaction.</li>
+          <li><kbd>success_url</kbd> - OPTIONAL - The URL you want us to redirect the customer to if they successfully
+          complete the transaction.</li>
+      </ul>
+    </div>
+
+  </div>
+</div> -->
+
+<div class="border border-dark rounded">
+<div class="container pb-5">
+  <div class="row">
+    <div class="col-md-12 p-0">
+      <h5 class="section-title pl-3">Basic Wordpress Integration</h5>
+    </div>
+    <div class="col-12 p-5">
+      <p class="text-center">This guide will describe the simpliest wordpress Integration using a shortcode.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class=" bg-grey"></div>
+
+<div class="border border-dark rounded">
+<div class="container pb-5">
+  <div class="row">
+    <div class="col-md-12 p-0">
+      <h5 class="section-title pl-3">Example</h5>
+    </div>
+    <div class="col-12 p-5">
+      <p>Below is an example for a finished coltpay payment button.</p>
+      <img src="../../../../../assets/img/example-image.png"  class="img-fluid">
+    </div>
+  </div>
+</div>
+</div>
+
+<div class=" bg-grey"></div>
+
+<div class="border border-dark rounded">
+<div class="container pb-5">
+  <div class="row">
+    <div class="col-md-12 p-0">
+      <h5 class="section-title pl-3">1 Account Profile</h5>
+    </div>
+    <div class="col-12 p-5">
+      <p>Go to Account Profile > API keys and generate a new Public API key. These keys can not be viewd once they are created so we sure to save it in a safe location. The Public API key can only be used to create invoices and is safe to put on your website.</p>
+      <img src="../../../../../assets/img/account-profile.png"  class="img-fluid">
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class=" bg-grey"></div>
+
+<div class="border border-dark rounded">
+<div class="container pb-5">
+  <div class="row">
+    <div class="col-md-12 p-0">
+      <h5 class="section-title pl-3">2 WP Admin Panel</h5>
+    </div>
+    <div class="col-12 p-5">
+      <p>Inside your WP admin panel go to Plugins > Add New. In the search bar look up "ColtPay Commerce" and click install. After the plugin is installed click Activate.</p>
+      <img src="../../../../../assets/img/admin-panel.png"  class="img-fluid">
+    </div>
+  </div>
+</div>
+</div>
+
+<div class=" bg-grey"></div>
+
+<div class="border border-dark rounded">
+<div class="container pb-5">
+  <div class="row">
+    <div class="col-md-12 p-0">
+      <h5 class="section-title pl-3">3 WP Settings</h5>
+    </div>
+    <div class="col-12 p-5">
+      <p>Once the plugin is installed and activated you can find the settings page under Settings > ColtPay.</p>
+      <img src="../../../../../assets/img/wp-settings.png"  class="img-fluid">
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class=" bg-grey"></div>
+
+<div class="border border-dark rounded">
+<div class="container pb-5">
+  <div class="row">
+    <div class="col-md-12 p-0">
+      <h5 class="section-title pl-3">4 WP Settings - API information</h5>
+    </div>
+    <div class="col-12 p-5">
+      <p>On this page you'll see two input boxes for the API keys found in Account Profile > API Keys. The public key is required. You do not need to enter the private key for the basic installation.</p>
+      <img src="../../../../../assets/img/api-information.png"  class="img-fluid">
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class=" bg-grey"></div>
+
+<div class="border border-dark rounded">
+<div class="container pb-5">
+  <div class="row">
+    <div class="col-md-12 p-0">
+      <h5 class="section-title pl-3">5 Code</h5>
+    </div>
+    <div class="col-12 p-5">
+      <p>You can then insert this code snipet into any page or post.</p>
+      <img src="../../../../../assets/img/code-1.png"  class="img-fluid"><br>
+    <div class="text-center mt-3 mb-3">
+      <button class="btn border border-dark pl-4 pr-4 font-weight-bolder" (click)="copyCode()" #copyButton>Copy Code</button>
+
+    </div>
+      <img src="../../../../../assets/img/code-2.png"  class="img-fluid">
+   
+    </div>
+  </div>
+</div>
+</div>
+
+<div class=" bg-grey"></div>
+
+<div class="border border-dark rounded">
+<div class="container pb-5">
+  <div class="row">
+    <div class="col-md-12 p-0">
+      <h5 class="section-title pl-3">6 Parameters</h5>
+    </div>
+    <div class="col-12 p-5 ">
+      <p>The link to the coltpay checkout page accepts to the following parameters:</p>
+      <div class="main-box mb-3">
+        <button class="btn btn-lg border border-dark mr-2">public_api_token</button>
+        <button class="btn btn-sm border border-dark mr-2 rounded ">REQUIRED</button>
+      </div>
+
+      <div class="main-box mb-3">
+        <button class="btn btn-lg border border-dark mr-2 ">currency</button>
+        <button class="btn btn-sm border border-dark mr-2 rounded ">REQUIRED</button>
+        <span>3 letter currency code .ie. usd,btc,mxn</span>
+      </div>
+
+
+      <div class="main-box mb-3">
+        <button class="btn btn-lg border border-dark mr-2 ">price</button>
+        <button class="btn btn-sm border border-dark mr-2 rounded ">REQUIRED</button>
+        <span>The price of to match the currency</span>
+      </div>
+
+      <div class="main-box mb-3">
+        <button class="btn btn-lg border border-dark mr-2 ">notification_url</button>
+        <button class="btn btn-sm border border-dark mr-2 rounded ">OPTIONAL</button>
+        <span>The price of to match the currency</span>
+      </div>
+
+
+      <div class="main-box mb-3">
+        <button class="btn btn-lg border border-dark mr-2 ">order_id</button>
+        <button class="btn btn-sm border border-dark mr-2 rounded ">OPTIONAL</button>
+        <span>An optional order ID you want to attach your transaction to.</span>
+      </div>
+
+
+      <div class="main-box mb-3">
+        <button class="btn btn-lg border border-dark mr-2 ">cancel_url</button>
+        <button class="btn btn-sm border border-dark mr-2 rounded ">OPTIONAL</button>
+        <span>The URL you want us to redirect the customer to if they cancel the transaction.</span>
+      </div>
+
+      <div class="main-box mb-3">
+        <button class="btn btn-lg border border-dark mr-2 ">success_url</button>
+        <button class="btn btn-sm border border-dark mr-2 rounded ">OPTIONAL</button>
+        <span>The URL you want us to redirect the customer to if they successfully complete the transaction.</span>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+
+<div class=" bg-grey"></div>
+
+<div class="border border-dark rounded">
+<div class="container pb-5">
+  <div class="row">
+    <div class="col-md-12 p-0">
+      <h5 class="section-title pl-3">7 You're now Integrated</h5>
+    </div>
+    <div class="col-12 p-5 ">
+      <p class="text-center font-weight-bolder"> If you are experiancing urther technical issues<br> Please reach out to support@coltpay.com</p>
+    </div>
+  </div>
+
+</div>
+</div>

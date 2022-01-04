@@ -1,0 +1,50 @@
+
+<section class="social-sharing contact-area animate-section" id="contactus">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12 text-center">
+                <h3 class="pb-4 sub-heading">Contact </h3>
+            </div>
+            <div class="justify-content-center mx-auto contact-form">
+                <form  [formGroup]="form" (submit)="submit()">
+                    <div class="form-group">
+                        <input formControlName="name" type="text" class="form-control" placeholder="Name">
+                        <span *ngIf="form.get('name').invalid">
+                            <small *ngIf="form.get('name').hasError('required') && form.get('name').touched" class="error"> Name is Required</small>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <input formControlName="email" type="email" class="form-control" placeholder="Email Address">
+                        <span *ngIf="form.get('email').invalid">
+                            <small *ngIf="form.get('email').hasError('required') && form.get('email').touched" class="error">Email is Required</small>
+                        </span>
+                        <span *ngIf="form.get('email').hasError('email') && !form.get('email').hasError('required')">
+                            <small class="error"> Please enter a valid email address</small>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <input formControlName="subject" type="text" class="form-control" placeholder="Subject">
+                        <span *ngIf="form.get('subject').invalid">
+                            <small *ngIf="form.get('subject').hasError('required') && form.get('subject').touched" class="error">Subject is Required</small>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <textarea formControlName="message" class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="Your Message"></textarea>
+                        <span *ngIf="form.get('message').invalid">
+                            <small *ngIf="form.get('message').hasError('required') && form.get('message').touched" class="error">Message is Required</small>
+                        </span>
+                    </div>
+                    <recaptcha formControlName="myRecaptcha" (scriptLoad)="onScriptLoad()" (scriptError)="onScriptError()"></recaptcha>
+                    <div class="form-group mt-4 mb-0 text-center">
+                        <button [disabled]="!form.valid" class="send-btn">Send</button>
+                        <div *ngIf="loader" class="m-loader " style="width: 30px; display: inline-block;"></div>
+                        <div class="col-md-8 custom-alert " #hasAlert> </div>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</section>

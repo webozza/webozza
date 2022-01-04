@@ -1,0 +1,40 @@
+
+<div class="border border-dark rounded"> 
+<div class="container min-height pb-3">
+    <div class="row ">
+      <div class="col-md-12 title-top">
+        <h5 class="section-title2 pl-3">Invoices</h5>
+      </div>
+    </div>
+
+    <div class="row">
+
+        <table class="table">
+            <thead>
+              <tr>
+              <th>ID</th>
+              <th>Date</th>
+              <th>Price (currency)</th>
+              <th>BTC Price</th>
+              <th>Status</th>
+              <th>Fee</th>
+              <th>Total</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let invoice of invoices">
+                  <td>{{ invoice.id }}</td>
+                  <td>{{ invoice.created_at | dateToLocal | date:'medium'}} </td>
+                  <td>{{ invoice.fiat_currency_price}} ({{ invoice.fiat_currency }}) </td>
+                  <td>{{ invoice.btc_price }}</td>
+                  <td>{{ invoice.status }}</td>
+                  <td>{{ invoice.btc_subtotal_fee }}</td>
+                  <td>{{ invoice.btc_total }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+</div>

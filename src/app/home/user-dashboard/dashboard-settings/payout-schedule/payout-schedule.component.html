@@ -1,0 +1,86 @@
+<div class="col-md-10 custom-alert" #hasAlert></div>
+
+<div class="container mb-5 pb-3">
+  <div class="row">
+    <div class="col-md-12 title-top">
+      <h5>Payment Schedule</h5>
+    </div>
+    <div class="col-md-12 pt-4 pb-4 text-left">
+      <p>
+        Set a schedule to automatically receive payouts or send manual payouts
+        via API
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 pt-2 mb-3">
+      <div class="custom-control custom-radio">
+        <input
+          type="radio"
+          id="customRadio1"
+          class="custom-control-input"
+          [checked]="!isManual"
+          (change)="SelectScheduleType('automatic')"
+          name="automatic"
+          value="automatic"
+        />
+        <label class="custom-control-label" for="customRadio1"
+          >Automatic when balance is
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <input
+        type="text"
+        numberOnly
+        [formControl]="minimum_amount"
+        class="form-control"
+        placeholder="minimum amount "
+      />
+    </div>
+    <!-- <div class="col-md-2 mb-3">
+        <select class="form-control" (change)="selectAautoType($event.target.value)">
+          <option [selected]="item.selected" *ngFor="let item of automatic_payouts" [value]="item.id">{{
+            item.text
+          }}</option>
+        </select>
+      </div> -->
+    <!-- <div class="col-md-3" *ngIf="payouts_time && !payout_schedule.isManual">
+        <select class="form-control" (change)="selectTime($event.target.value)">
+          <option [selected]="item.selected" *ngFor="let item of payouts_time" [value]="item.text">{{
+            item.value
+          }}</option>
+        </select>
+      </div> -->
+  </div>
+  <!-- <div class="row mt-4 ">
+      <div class="custom-control custom-radio">
+        <input type="radio" id="customRadio2"  class="custom-control-input"  (change)="SelectScheduleType('manual')" [checked]="isManual" name="manual" value="manual" /> Manual
+      </div>
+    </div> -->
+  <div class="row">
+    <div class="col-md-3 pt-2 mb-3">
+      <div class="custom-control custom-radio">
+        <input
+          type="radio"
+          id="customRadio2"
+          class="custom-control-input"
+          [checked]="isManual"
+          (change)="SelectScheduleType('manual')"
+          name="manual"
+          value="manual"
+        />
+        <label class="custom-control-label" for="customRadio2">Manual</label>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-4 save-area pt-3">
+    <div class="col-md-12 text-right">
+      <button (click)="submit('schedule')" class="btn theme-btn">
+        Save
+        <i *ngIf="loading" class="fa fa-spinner ml-2 fa-spin"></i>
+      </button>
+    </div>
+  </div>
+</div>
+

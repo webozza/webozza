@@ -1,0 +1,77 @@
+
+<section class="slider-content animate-section">
+  <div class="container">
+      <div class="row align-items-center">
+          <div  class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 slider-body text-center">
+              <h3 class="main-heading">{{content.welcome_section.label}}</h3>
+              <div [innerHTML]="content.welcome_section.description| safeHtml"></div>
+              <a routerLink="/sign-up" class="lbtn lbtn-lg">Get Started</a>
+              
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- <section class="service features features-2">
+  <div class="container">
+      <div class="row align-items-center">
+          <div class="col-lg-6 col-md-6 content-body" *ngIf="content.secure_payment">
+              <h3 class="main-heading">{{content.secure_payment.label}}</h3>
+              <div [innerHTML]="content.secure_payment.description | safeHtml"></div>
+
+          </div>
+          <div class="col-lg-6 col-md-6">
+              <div class="content-img float-right mt-50">
+                  <img src="./assets/img/home/secured-payment.png" class="img-fluid">
+              </div>
+          </div>
+      </div>
+  </div>
+</section> -->
+
+<section class="service story features animate-section" id="aboutus">
+  <div class="container">
+      <div class="row align-items-center">
+          <div class="col-lg-5 col-md-6">
+              <div class="content-img">
+                  <img src="./assets/img/home/what-we-do3.png" class="img-fluid">
+              </div>
+          </div>
+          <div class="col-lg-7 col-md-6 content-body mt-50" *ngIf="content.our_history">
+                  <h3 class="main-heading">{{content.our_history.label}}</h3>
+                  <div [innerHTML]="content.our_history.description | safeHtml"></div>
+                  <div [innerHTML]="content.promotion_checkbox.description | safeHtml "></div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="accept-bitcoin">
+  <div class="container">
+      <div class="row align-items-center">
+          <div class="col-lg-12 col-md-12 content-body text-center" >
+              <div [innerHTML]="content.promotion_text.description | safeHtml "></div>
+          </div>
+      </div>
+  </div>
+</section> 
+
+<section class="service whatwedo">
+  <div class="container">
+      <div class="row align-items-center">
+          <div class="col-lg-6 col-md-6 content-body" *ngIf="content.what_we_do">
+                  <h3 class="main-heading">{{content.what_we_do.label}}</h3>
+                  <div class="mb-4 " [innerHTML]="content.what_we_do.description | safeHtml"></div>
+                  <!-- <a routerLink="/contact" class="mt-4 lbtn lbtn-lg">Contact Us</a> -->
+          </div>
+          <div class="col-lg-6 col-md-6">
+              <div class="content-img float-right mt-50">
+                  <img src="./assets/img/home/our-story2.png" class="img-fluid">
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<section class="service whatwedo">
+  <contact-us></contact-us>
+</section>

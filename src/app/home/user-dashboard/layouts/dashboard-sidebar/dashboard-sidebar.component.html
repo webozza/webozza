@@ -1,0 +1,163 @@
+<div class="left-side ">
+  <a class="dashboard-togglemenu">Manu
+    <i class="fa fa-angle-down"></i>
+  </a>
+  <!-- large device -->
+
+  <div id="accordianmenu" class="large-accordian shadow">
+    <ul>
+      <li>
+        <a routerLink="/dashboard"> <i class="fa fa-home"></i>Dashboard</a>
+      </li>
+
+      <li class="active">
+          <a> <i class="fas fa-cogs"></i>User Profile</a>
+        <ul>
+          <li>
+            <a routerLink="profile">Edit Profile</a>
+          </li>
+          <li>
+            <a routerLink="profile/account">Manage Account</a>
+          </li>
+        </ul>
+      </li>
+
+      <li *ngIf="account" class="active">
+          <a> <i class="fas fa-money-bill"></i>Account</a>
+        <ul>
+          <li *ngIf="account_user.is_owner">
+            <a routerLink="account/profile">Account Profile</a>
+          </li>
+          <li *ngIf="account_user.is_owner">
+              <a routerLink="account/users">Users</a>
+          </li>
+          <li>
+            <a routerLink="account/invoices">Invoices</a>
+          </li>
+          <li>
+            <a routerLink="account/account-invoices">Reconciliation Reports</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+          <a routerLink="support">  Support</a>
+        </li>
+        <li>
+            <a routerLink="integration/basic">  Basic Integration</a>
+          </li>
+          <li>
+              <a routerLink="integration/wordpress-basic">  Basic Wordpress Integration</a>
+            </li>
+            <li>
+                <a routerLink="integration/wordpress-woocommerce">  Wordpress Woocommerce Integration</a>
+              </li>
+                <!-- <li>
+            <a routerLink="integrate/woocommerce">  Woocommerce Integration</a>
+          </li> -->
+  
+    </ul>
+  </div>
+
+
+
+
+
+
+
+  <!-- <div id="accordianmenu" class="large-accordian shadow">
+    <ul>
+      <li>
+        <a routerLink=""> <i class="fa fa-home"></i>Home</a>
+      </li>
+      <li>
+        <a routerLink="./"> <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+      </li>
+      <li class="active">
+        <a> <i class="fas fa-cogs"></i>Settings</a>
+        <ul>
+          <li>
+            <a routerLink="settings/change-password">Change Password</a>
+          </li>
+          <li>
+            <a routerLink="settings/api">Api Reference</a>
+          </li>
+          <li>
+            <a routerLink="settings/wallet">Wallet Info</a>
+          </li>
+          <li>
+            <a routerLink="integrate/woocommerce">  Integration</a>
+          </li>
+          <li>
+            <a routerLink="settings/payout-setup">Bank Info </a>
+          </li>
+          <li>
+            <a routerLink="settings/payout-schedule">Payout Schedule  </a>
+          </li>
+           <li>
+            <a routerLink="settings/transaction-fequency">Transaction Frequency  </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a routerLink="transactions"> <i class="fas fa-money-bill"></i> Transactions </a>
+      </li>
+      <li>
+        <a routerLink="payments"><i class="fas fa-credit-card"></i> Payments </a>
+      </li>
+      <li>
+        <a routerLink="profile"> <i class="fas fa-user-alt"></i>Profile</a>
+      </li>
+
+      <li>
+        <a routerLink="support"> <i class="fas fa-file"></i> Get Support</a>
+      </li>
+    </ul>
+  </div> -->
+
+  <!-- Mobile device -->
+  <!--<div id="accordianmenu" class="mobile-accordian">
+    <ul>
+      <li>
+        <a routerLink=""> <i class="fa fa-home"></i>Home</a>
+      </li>
+      <li>
+        <a routerLink="./"> <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+      </li>
+      <li class="active">
+        <a> <i class="fas fa-cogs"></i>Settings</a>
+        <ul>
+          <li>
+            <a routerLink="settings/change-password">Change Password</a>
+          </li>
+          <li>
+            <a routerLink="settings/api">Api Reference</a>
+          </li>
+          <li>
+            <a routerLink="settings/wallet">Wallet Info</a>
+          </li>
+          <li>
+            <a routerLink="settings/demo/merchant"> Integration</a>
+          </li>
+          <li>
+            <a routerLink="settings/payout-setup">Payout-settings </a>
+          </li>
+        </ul>
+      </li>
+      <li class="active">
+        <a> <i class="fas fa-file"></i>Transactions</a>
+        <ul>
+          <li>
+            <a routerLink="transactions/payments">Payments </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a routerLink="profile"> <i class="fas fa-user-alt"></i>Profile</a>
+      </li>
+
+      <li>
+        <a routerLink="support"> <i class="fas fa-file"></i> Get Support</a>
+      </li>
+    </ul>
+  </div>-->
+</div>

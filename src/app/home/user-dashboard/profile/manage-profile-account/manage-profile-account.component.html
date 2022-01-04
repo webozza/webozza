@@ -1,0 +1,37 @@
+<div *ngIf="loaded" class="container mb-5 pb-3">
+    <div class="row">
+      <div class="col-md-12 p-0">
+        <h5 class="section-title2 pl-3">Account</h5>
+      </div>
+    </div>
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-6" #hasAlert></div>
+    </div>
+
+    <div *ngIf="!account.id && !account_user.id">
+        <p> You currently do not have any account invites. </p>
+  
+        <p> If you would like to open a business account and start accepting payments click <a routerLink="/dashboard/profile/account/create">HERE</a>.</p>
+      </div>
+
+      <div *ngIf="account_user.id && account_user.status == 'invited'">
+          <p> You currently have a pending account invite. With this invite you'll be able to see and manage transactions, reports and payments.  </p>
+    
+          <p> Invite from: {{account.name}}</p>
+          <p> Invite created: {{account_user.created_at | dateToLocal | date:'medium'}}</p>
+          <p> <a (click)="manageInvite('accept')">Accept Invite</a>  or <a (click)="manageInvite('decline')">Decline Invite</a> </p>
+          <p> In order to get more invites or create your own business account, you'll need to accept or decline this invite.</p>
+      </div>
+
+      <div *ngIf="account.id && account_user.status == 'valid'">
+          <p> You're currently on an active business account. </p>
+          <p> Account Name: {{ account.name }}</p>
+          <p *ngIf="account_user.is_owner">Because you're the owner of the account you'll need to contact support to leave this account.</p>
+          <p *ngIf="!account_user.is_owner"> <a (click)="leaveAccount()">Leave Account</a> </p>
+          <p *ngIf="!account_user.is_owner"> In order to get more invites or create your own business account, you'll need to leave this account.</p>
+      </div>
+
+      <p> If you have any questions please reach out to support@coltpay.com</p>
+
+
+</div>

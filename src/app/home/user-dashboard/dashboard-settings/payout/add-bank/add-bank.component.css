@@ -1,0 +1,22 @@
+.title {
+    position: relative;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+.title h1 {
+    font-size: 32px;
+}
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.subtitle {
+    width: 100%;
+    text-align: center;
+    margin: 25px 0;
+    margin-bottom: 45px;
+    font-size: 18px;
+    font-weight: 400;
+}

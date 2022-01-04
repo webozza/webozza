@@ -1,0 +1,7 @@
+<div class="loaded">
+    <div  *ngIf="data" [innerHTML]="data | safeHtml"></div>
+</div>
+
+<app-preloader class="loader"></app-preloader>
+
+<!-- <div  [innerHTML]="data | safeHtml"></div> -->

@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 p-0">
+      <h5 class="section-title pl-3">Payments</h5>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <app-payments-filter
+      (onReset)="resetFilter()"
+      (onSearch)="searchPayoutList($event)"
+    ></app-payments-filter>
+  </div>
+
+  <div class="col-md-12 pt-3 pb-4">
+    <table class="table table-hover table-frontbg table-responsive">
+      <thead>
+        <tr>
+          <!-- <th>Transaction Id</th> -->
+          <th>Date</th>
+          <th>No. Of Confirmations</th>
+          <th>Amount (BTC)</th>
+          <th>Status</th>
+
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of data">
+          <td>
+            {{ item.created | date }} {{ item.created | date: "shortTime" }}
+          </td>
+          <!-- <td>{{ item.transaction_id }}</td> -->
+          <td>{{ item.confirmations }}</td>
+          <td>{{ item.total_amount_btc }}</td>
+          <td>
+            <span
+              [ngStyle]="{
+                background: getPayoutStatus(item.status).color
+              }"
+              class="status m-badge m-badge--wide"
+              >{{ getPayoutStatus(item.status).text }}</span
+            >
+          </td>
+
+          <td>
+            <a
+              [routerLink]="['./details', item.id]"
+              class="btn btn-sm theme-btn"
+              >View
+            </a>
+            <button
+              (click)="downloadReport(item.id)"
+              class="btn btn-brand ml-5  btn-success"
+            >
+              Download
+            </button>
+          </td>
+        </tr>
+        <tr *ngIf="!data.length && loaded">
+          <td
+            colspan="5"
+            style="    text-align: center;
+          font-weight: bold;"
+          >
+            No Payments found
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="col-md-auto" *ngIf="pageInfo && data.length">
+      <mat-paginator
+        [length]="pageInfo.count"
+        [pageSize]="limit"
+        [pageIndex]="page"
+        [pageSizeOptions]="[5, 10, 20, 50, 100]"
+        (page)="paginate($event)"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+</div>

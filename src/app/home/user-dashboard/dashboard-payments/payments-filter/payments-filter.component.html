@@ -1,0 +1,23 @@
+<form [formGroup]="form" (submit)="submit()" class="row">
+  <div class="col-md-3">
+    <mat-form-field>
+      <mat-select formControlName="status" placeholder="Select Status ">
+        <mat-option selected="true" value="">-Select-</mat-option>
+        <mat-option selected="false"  value="completed">Completed</mat-option>
+        <mat-option selected="false" value="pending">Pending</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="col-md-3">
+    <date-range-picker
+              #resetDateRange
+              (onSelectDate)="SelectDateRange($event)"
+            ></date-range-picker>
+  </div>
+
+  <div class="col-md-5 mt-2 text-center">
+    <button class="btn  theme-btn">Submit</button>
+    <button type="button" (click)="reset()" class="btn btn-brand ml-2">Reset</button>
+  </div>
+  <!-- <div class="col-md-2 ml-5 mt-2"><button type="button" (click)="reset()" class="btn btn-brand">Reset</button></div> -->
+</form>

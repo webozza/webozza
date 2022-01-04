@@ -1,0 +1,35 @@
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 footer-logo">
+                <img src="./assets/img/home/logo.png" class="img-fluid">
+            </div>
+            <div class="col-md-3 offset-md-3 col-sm-6 col-6 footer-menu">
+                <h5>{{contents.quick_link.label}}</h5>
+                <div class="footer-bar" [innerHTML]="contents.quick_link.description | safeHtml"></div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-6 footer-menu">
+                <h5>{{contents.contact_info.label}}</h5>
+                <div [innerHTML]="contents.contact_info.description | safeHtml"></div>.
+                <div class="colt-social .d-flex">
+                    <a href="https://www.facebook.com/coltpay"><i class="fab fa-facebook-square"></i></a>
+                    <a href="https://www.instagram.com/coltpay"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/coltpay/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/coltpay1"><i class="fab fa-twitter-square"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 ">
+                    <div [innerHTML]="contents.footer_copyright.description | safeHtml"></div>
+                </div>
+                <div class="col-md-6 col-sm-6 text-right">
+                    <div [innerHTML]="contents.developed_by.description | safeHtml"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,30 @@
+
+    <footer class="footer">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-3 footer-logo">
+                  <img src="./assets/img/logo.png" class="img-fluid">
+              </div>
+              <div class="col-md-3 offset-md-3 col-sm-6 col-6 footer-menu">
+                  <h5>{{contents.quick_link.label}}</h5>
+                  <div class="footer-bar" [innerHTML]="contents.quick_link.description | safeHtml"></div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-6 footer-menu">
+                <h5>{{contents.contact_info.label}}</h5>
+                  <div [innerHTML]="contents.contact_info.description | safeHtml"></div>
+              </div>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-6 col-sm-6 ">
+                       <div [innerHTML]="contents.footer_copyright.description | safeHtml"></div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 text-right">
+                    <div [innerHTML]="contents.developed_by.description | safeHtml"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>

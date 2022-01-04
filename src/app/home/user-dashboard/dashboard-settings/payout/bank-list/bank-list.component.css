@@ -1,0 +1,18 @@
+.mat-paginator-page-size-label ,.mat-paginator-range-label{
+    color: #000;
+}
+p {
+    color: #000;
+}
+
+.fa-trash {
+    cursor: pointer;
+}
+
+@media (max-width: 991px) {
+    .t-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+}

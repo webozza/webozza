@@ -1,0 +1,12 @@
+td {
+    padding: 10px;
+}
+.mat-form-field-flex {
+    border: 1px solid #eee;
+    padding: 0px 15px 6px;
+}
+.form-control {
+    padding: 10px 15px;
+    height: 40px !important;
+    font-family: 'Open Sans', sans-serif !important;
+}

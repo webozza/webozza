@@ -1,0 +1,60 @@
+<div class="container mb-5 pb-3">
+  <div class="row">
+    <div class="col-md-12 p-0">
+        <h5 class="section-title pl-3">API reference</h5>
+    </div>
+  </div>
+  
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-12 pt-3">
+      <form [formGroup]="form" (submit)="submit()">
+        <div class="form-group row">
+          <label style="float: left; width: 100%">Notification URL *</label>
+          <select (change)="setUrlPrototcol($event.target.value,1)" class="form-control col-md-2 col-2">
+            <option [selected]="url_selected===protocol.id" [value]="protocol.value" *ngFor="let protocol of protocols">{{protocol.text}}</option>
+          </select>
+          <input formControlName="notification_url" type="text" class="form-control col-md-10 col-10" autocomplete="off">
+         <div class="ml-3 col-md-4">
+          <span *ngIf="form.get('notification_url').hasError('required') && form.get('notification_url').touched" class="errors">
+            <small> Website is required</small>
+          </span>
+          <span *ngIf="form.get('notification_url').hasError('validUrl') && form.get('notification_url').touched && !form.get('notification_url').hasError('required')"
+            class="errors">
+            <small> Please enter valid Website </small>
+          </span>
+         </div>
+        </div>
+        <div class="form-group row">
+          <label style="float: left; width: 100%" for=""> Redirect URL *</label>
+          <select (change)="setUrlPrototcol($event.target.value,2)" class="form-control col-md-2 col-2">
+            <option [selected]="redirect_url_selected===protocol.id" [value]="protocol.value" *ngFor="let protocol of protocols">{{protocol.text}}</option>
+          </select>
+          <input formControlName="redirect_url" type="text" class="form-control col-md-10 col-10" autocomplete="off">
+          <div class="ml-3 col-md-4">
+            <span *ngIf="form.get('redirect_url').hasError('required') && form.get('redirect_url').touched" class="errors">
+              <small> Website is required</small>
+            </span>
+            <span *ngIf="form.get('redirect_url').hasError('validUrl') && form.get('redirect_url').touched && !form.get('redirect_url').hasError('required')"
+              class="errors">
+              <small> Please enter valid Website </small>
+            </span>
+          </div>
+        </div>
+        <div class="form-group row ">
+          <label style="float: left; width: 100%">Api Key</label>
+          <input formControlName="api_key" type="text" class="form-control col-md-12" autocomplete="off">
+          <!-- <button type="button" class=" ml-4 send-btn" (click)="generateKey()"> Generate Key
+            <i *ngIf="submitting" class="fa fa-spinner ml-2 fa-spin"></i>
+          </button> -->
+        </div>
+        <div class="form-group text-right p-0">
+          <button [disabled]="form.invalid" class="btn theme-btn defaulbtn-size mt-2"> Submit
+            <i *ngIf="loading" class="fa fa-spinner fa-spin"></i>
+          </button>
+          <div class="alert col-md-12" #hasAlert></div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+.step-block {
+    text-align: center;
+    position: relative;
+    float: left;
+    width: 33.33%;
+}
+.checkout-steps {
+    padding: 10px 50px 12px;
+    border-bottom: 1px solid #edeff1;
+}
+.step-number {
+    font-size: 24px;
+    position: relative;
+    background-color: #fff;
+    z-index: 9;
+    display: inline-block;
+    border: 3px solid #bbbbbb;
+    width: 45px;
+    height: 45px;
+    line-height: 39px;
+}
+
+
+.step-number {
+    border-color: #000b4d !important;
+    width: 35px;
+    height: 35px;
+    line-height: 29px;
+    font-size: 20px;
+    border-radius: 50%;
+}
+.step-block:after {
+    content: "";
+    height: 3px;
+    width: 100%;
+    z-index: 8;
+    position: absolute;
+    left: 50%;
+    top: 21px;
+    background-color: #bbbbbb;
+}
+.step-3.step-block:after   {
+    content: "";
+    height: 3px;
+    width: 0%;
+}
+
+.confirm-payment.step-block:after   {
+  content: "";
+  height: 3px;
+  width: 100%;
+  z-index: 8;
+  position: absolute;
+  left: 50%;
+  top: 21px;
+  background-color: #000b4d;
+}
+.confirm-billing.step-block:after   {
+  content: "";
+  height: 3px;
+  width: 100%;
+  z-index: 8;
+  position: absolute;
+  left: 50%;
+  top: 21px;
+  background-color: #000b4d;
+}
+
+
+.step-name {
+    display: block;
+    font-size: 15px;
+}
+ .billing-address a {
+    color: #000b4d!important;
+   }
+
+input {
+  height: 50px !important;
+}

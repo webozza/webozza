@@ -1,0 +1,39 @@
+.custom-alert p {
+  background: #f66e84;
+  padding: 20px;
+  color: #fff;
+}
+
+p.copy {
+  margin-top: 10px;
+  background: #22b54a;
+  color: #ffff;
+  padding: 0px 24px;
+}
+
+.custom-copy-alert {
+  background: #19c49b;
+  color: #fff;
+  /* position: absolute;
+  right: -20px; */
+  padding: 8px 101px;
+  border-radius: 5px;
+  width: 60%;
+  margin: 0 auto;
+  top: 0px;
+}
+
+.copy-btn {
+  float: right;
+  position: absolute;
+  left: 39%;
+  top: -17px;
+  padding: 3px 13px;
+  background: #0b9bc7;
+  color: #fff;
+}
+
+pre {
+  background: #e0e0e0;
+  color: #de204a;
+}

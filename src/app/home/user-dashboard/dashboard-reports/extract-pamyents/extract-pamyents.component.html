@@ -1,0 +1,61 @@
+<div class="container">
+  <h5 class="section-title">Extracts of Payments  </h5>
+  <h3 class="text-center mt-3"> Demo </h3>
+  <div class="col-md-12 pt-4 pb-3">
+
+    <div class="row">
+      <div class="form-group col-md-3">
+        <input type="text" name="" placeholder="Start" class="form-control" id="">
+      </div>
+      <div class="form-group col-md-3">
+        <input type="text" name="" placeholder="Term" class="form-control" id="">
+      </div>
+      <div class="form-group col-md-3">
+        <input type="text" name="" placeholder="Name" class="form-control" id="">
+      </div>
+      <div class="form-group col-md-3">
+        <input type="text" name="" placeholder="Email" class="form-control" id="">
+      </div>
+    </div>
+
+    <div class="row mt-3 justify-content-center">
+      <mat-form-field class="col-md-8">
+        <mat-select placeholder="Status" [formControl]="status" multiple>
+          <mat-option *ngFor="let status of statusList" [value]="status">{{status}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="col-md-2">
+        <button class="btn theme-btn"> Submit
+          <i *ngIf="loading" class="fa fa-spinner ml-2 fa-spin"></i>
+        </button>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-12 pt-3 pb-4">
+    <table class="table table-hover table-frontbg" mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="created">
+        <th mat-header-cell *matHeaderCellDef> Date</th>
+        <td mat-cell *matCellDef="let element"> {{element.created}}</td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}}</td>
+      </ng-container>
+      <ng-container matColumnDef="value">
+        <th mat-header-cell *matHeaderCellDef> Value</th>
+        <td mat-cell *matCellDef="let element"> {{element.value}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> STATUS</th>
+        <td mat-cell *matCellDef="let element">
+          <span class="m-badge m-badge--wide m-badge--success">{{element.status}}</span>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columns"></tr>
+      <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="row p-4 mat-typography">
+    <div class="col-12 pb-2 justify-content-between flex-row" style="display: flex">
+        <h3 class="dl-title pad">{{data.title?data.title:'Confirmation'}}
+        </h3>
+        <button mat-icon-button (click)="onDialogClose(false)" class="close-btn flex-self-start"><i
+                class="fa fa-times"></i></button>
+    </div>
+    <div class="col-12 pb-2">
+        <h4 class="mat-caption pad mtop-smminus">{{data.text?data.text:'Please confirm this task'}}</h4>
+    </div>
+    <div class="col-12 justify-content-end" style="display: flex">
+        <div class="pr-2">
+            <button class="btn lbtn-small lbtn-default " (click)="onDialogClose(false)">
+                {{data.cancelButtonText?data.cancelButtonText:'Cancel'}}
+            </button>
+        </div>
+        <div>
+            <button class="btn lbtn-small lbtn-green" (click)="onDialogClose(true)">
+                {{data.okButtonText?data.okButtonText:'Ok'}}
+            </button>
+        </div>
+    </div>
+</div>

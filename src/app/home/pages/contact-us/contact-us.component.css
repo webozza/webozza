@@ -1,0 +1,21 @@
+.send-btn:hover , .send-btn {
+    border: none;
+}
+
+.custom-alert  {
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-form form {
+    width: 305px
+}
+.sub-heading {
+    font-size: 35px;
+    color: #000b4d;
+    font-family: Gotham-bold;
+    text-transform: capitalize;
+    width: 80%;
+    margin: 0 auto;
+}

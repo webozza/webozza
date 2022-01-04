@@ -1,0 +1,49 @@
+
+.sub-heading {
+    font-size: 35px;
+    color: #000b4d;
+    font-family: Gotham-bold;
+    text-transform: capitalize;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+.font-weight-bolder {
+    font-weight: 700 !important;
+}
+
+.blue-box {
+    background: #67bb89;
+    padding: 20px;
+    width: 475px;
+    border-radius: 20px;
+    margin: auto auto 35px;
+    font-size: 30px
+}
+.accept-bitcoin {
+    padding: 21px 0 0;
+}
+.accept-bitcoin.item-ceck {
+  background: #f2f3f8!important;
+}
+.content-body  ul li {
+    margin: 10px 0;
+}
+.whatwedo img {
+    width: 130px;
+    margin-top: 10px;
+    padding: 0 5px;
+}
+
+.h-15 {
+    height: 150px
+}
+@media (max-width: 575px) {
+    .sub-heading {
+        font-size: 22px;
+    }
+    .blue-box {
+        width: 100%;
+    }
+}

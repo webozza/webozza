@@ -1,0 +1,91 @@
+<div class="title">
+    <h1 class="text-center">Your Bank Acccount <button
+      mat-icon-button
+      (click)="onDialogClose(false)"
+      class="close-btn flex-self-start"
+    >
+      <i class="fas fa-times"></i>
+    </button></h1>
+</div>
+
+<div class="container">
+  <form [formGroup]="form" class="row" (submit)="submit()">
+    <h3 class="subtitle">Yur bank account must be a checking account</h3>
+    <div class="col-md-12">
+      <div class="form-group row">
+        <label class="col-md-4">Currency</label>
+        <div class="col-md-8">
+          <select  class="form-control" disabled="true" name="" id="">
+            <option value="">USD</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-4">Country</label>
+        <div class="col-md-8">
+          <select  class="form-control" disabled="true" name="" id="">
+            <option value="">USA</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-4">Routing Number</label>
+        <div class="col-md-8">
+            <input numberOnly formControlName="routing_number" type="text" class="  form-control" />
+            <span *ngIf="form.get('routing_number').hasError('required') && form.get('routing_number').touched" class="errors">
+                <small>Routing Number is required !</small>
+              </span>
+            <span *ngIf="!form.get('routing_number').hasError('required') && form.get('routing_number').hasError('Invalid')" class="errors">
+                <small> Routing Number must have 
+                  <strong>9</strong> digits!</small>
+              </span>
+        </div>
+   
+      </div>
+      <div class="form-group row">
+        <label class="col-md-4">Bank Code (BIC/SWIFT)</label>
+       <div class="col-md-8">
+          <input formControlName="swift_code" type="text" class="form-control" />
+          <span *ngIf="form.get('swift_code').hasError('required') && form.get('swift_code').touched" class="errors">
+              <small>Swift  Code is required !</small>
+            </span>
+            <span *ngIf="!form.get('swift_code').hasError('required') && form.get('swift_code').hasError('Invalid')" class="errors">
+                <small> Invalid Swift Code </small>
+              </span>
+       </div>
+      
+      </div>
+      <div class="form-group row">
+        <label class="col-md-4">Bank Account Number (IBAN)</label>
+        <div class="col-md-8">
+            <input  numberOnly formControlName="account_number"  type="text" class=" form-control" />
+            <span *ngIf="form.get('account_number').hasError('required') && form.get('account_number').touched" class="errors">
+                <small>Account Number is required !</small>
+              </span>
+            <span *ngIf="!form.get('account_number').hasError('required') && form.get('account_number').hasError('minlength')" class="errors">
+                <small> Account Number must have at least
+                  <strong>17</strong> digits!</small>
+              </span>
+        </div>
+   
+      </div>
+      <div class="form-group row">
+        <label class="col-md-4" >Min. Settlement Amount</label>
+        <div class="col-md-8">
+            <input placeholder="Put minimum BTC to be widrawn " formControlName="min_settlement_amount_btc" type="text" class=" form-control" />
+        </div>
+     
+      </div>
+    </div>
+    <div class="col-md-12 mt-4 text-right">
+        <button type="button" (click)="onDialogClose(false)" style="background: #eee;" class="mr-3 btn btn-secondary">Cancel</button>
+        <button class="btn theme-btn">
+          {{data && data.editMode?'Update': 'Add'}} Bank Account
+          <i *ngIf="loading" class="fa fa-spinner ml-2 fa-spin"></i>
+        </button>
+    </div>
+    <div class="row justify-content-center col-md-12">
+        <div class="col-md-10" #hasAlert></div>
+    </div>
+  </form>
+</div>

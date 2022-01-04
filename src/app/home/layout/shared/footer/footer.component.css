@@ -1,0 +1,13 @@
+.footer-menu ul li i {
+    margin-right: 0!important;
+    margin-right: 10px;
+}
+
+li {
+    list-style: none;
+}
+svg {
+    width: 8px;
+    margin-right: 5px;
+}
+   

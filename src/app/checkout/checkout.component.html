@@ -1,0 +1,61 @@
+<div *ngIf="invoice" class="container-fluid">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-12">
+      <mat-card class="ccheckout-wraper">
+        <div class="qr_wrap">
+
+            <div *ngIf="invoice.status == 'new' 
+            || invoice.status == 'paid' 
+            || invoice.status == 'confirmed' 
+            || invoice.status == 'complete' " class=" qr_wrap_body">
+              <h6 *ngIf="!claimsHasPaid">Please scan QR code to Pay</h6>
+              <h6 *ngIf="claimsHasPaid || (invoice.status == 'paid' 
+              || invoice.status == 'confirmed' 
+              || invoice.status == 'complete')" >Payment Complete</h6>
+              <p *ngIf="!claimsHasPaid">Click the "<strong>I've made this payment</strong>" button after you've sent the payment.</p>
+
+              <div *ngIf="!claimsHasPaid || (invoice.status == 'paid' 
+              || invoice.status == 'confirmed' 
+              || invoice.status == 'complete')" class="amount">
+                <label>Amount</label>
+                <div class="amount-value">{{invoice.btc_price}} BTC</div>
+              </div>
+              <div *ngIf="!claimsHasPaid || (invoice.status == 'paid' 
+              || invoice.status == 'confirmed' 
+              || invoice.status == 'complete')"  class="amount">
+                <label>Address</label>
+                <div class="amount-value">{{invoice.btc_address}}</div>
+              </div>
+              <div class="amount-img text-center">
+                 <img style="width: 225px; margin-bottom: 20px" [src]="checkout_img"  class="checkout_img" alt=""> 
+              </div>
+              <a [href]="success_url" *ngIf="success_url && invoice.status == 'paid'"  class="back-btn btn btn-lg btn-block btn-outline-primary">Back to Merchant </a>
+              <button *ngIf="!claimsHasPaid" (click)="clickClaimsHasPaid()" class="amount-btn btn btn-lg btn-block btn-outline-primary"> I've made this payment </button>
+            
+              <div *ngIf="claimsHasPaid">
+                <p>Thank you for paying! You can go back to the merchant to complete the transaction. </p>
+
+                <a [href]="success_url" *ngIf="success_url"  class="back-btn btn btn-lg btn-block btn-outline-primary">Back to Merchant </a>
+
+              </div>
+
+              <p *ngIf="blockchainDisclaimer" style="margin-top: 10px; text-align:center;">Please note it can take up to 1 hour for the transaction to be confirmed on the Blockchain network. You can safely leave this page at anytime after you've paid.</p>
+              <p *ngIf="invoice.status == 'new' && showCancelButton" style="text-align:center;"><a [href]="cancel_url">Cancel And Go Back</a></p>
+            </div>
+
+            <div *ngIf="invoice.status == 'expired' || invoice.status == 'invalid' " class=" qr_wrap_body">
+              <h6>Invoice Expired</h6>
+
+              <p>This invoice is expired and should no longer be used. Please return to the merchant to try a new payment.</p>
+
+              <p>If you made a payment and it's pending it will still be accepted. You can safely leave this page.</p>
+
+              <p style="text-align:center;"><a *ngIf="showCancelButton" [href]="cancel_url">Cancel And Go Back</a></p>
+            </div>
+
+        </div>
+      </mat-card>
+    </div>
+  </div>
+
+</div>

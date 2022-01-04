@@ -1,0 +1,48 @@
+/* .form-login .alert.ok:before {
+    background: #35505e;
+    background: rgba(62,244,194,.15);
+}
+.form-login .alert:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 54px;
+    height: 54px;
+    border-radius: 2px;
+} */
+
+
+
+ .custom-alert{
+    padding: 0 22px;
+color: #fff;
+    background: #02b171;
+ }
+ .custom-alert p {
+     padding: 10px;
+     margin: 0;
+     color: #fff;
+ }
+
+ .login-left-side {
+
+    /* height: 470px; */
+}
+.login-inner {
+    /* height: 445px; */
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: GOTHAM-REGULAR !important;
+  }
+  
+  span, a, label, p {
+    font-family: GOTHAM-REGULAR !important;
+    font-size: 15px;
+  }
+  
+
+.custom-alert {
+    position: absolute
+}

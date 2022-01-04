@@ -1,0 +1,28 @@
+<div class="dashboard-wrapper">
+  <dashboard-header></dashboard-header>
+  <section class="mian-content">
+    <div class="custom-container">
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-12 col-12">
+          <dashboard-sidebar></dashboard-sidebar>
+        
+        </div>
+        <div class="col-lg-9 col-md-8 col-sm-12 col-12 right-side">
+          <div class="row">
+              <div  *ngIf="!user.email_validated" class="col-12">
+                  <div style="color: #721c24; background-color: #f8d7da; border-color: #f5c6cb;" class="alert alert-primary" role="alert">
+                      Your email address has not been verified yet. Please check your email or contact support@coltpay.com.
+                    </div><br/>
+                  </div>
+
+            <div class="col-lg-12">
+              <div class=" user-dashboard " [ngClass]="{'shadow section-content': addBackground === true}" >                  
+                <router-outlet></router-outlet>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

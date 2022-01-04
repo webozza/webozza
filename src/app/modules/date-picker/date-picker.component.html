@@ -1,0 +1,10 @@
+<div class="input-group m-input-group" style="width: 300px;">
+    <input autocomplete="nope" class="form-control" [placeholder]="placeholder" [(ngModel)]="rental_date" (ngModelChange)="selectDate(rental_date)" 
+        name="dp"  ngbDatepicker #d="ngbDatepicker">
+    <div class="input-group-append" style="top:6px;">
+        <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+            <img src="./assets/img/home/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
+        </button>
+    </div>
+</div>
+

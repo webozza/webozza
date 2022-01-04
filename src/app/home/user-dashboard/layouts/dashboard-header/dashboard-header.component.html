@@ -1,0 +1,69 @@
+<header class="header">
+  <div class="custom-container">
+    <div class="row">
+      <div class="col-2  logo">
+        <a routerLink="">
+          <img src="./assets/img/home/logo.png" />
+        </a>
+      </div>
+      <div class="col-8">
+        <div class="row">
+          <h3 *ngIf="testMode"
+            style="    width: 26%;
+            font-weight: 700;
+            background: red;
+            margin: 25px auto;
+            border-radius: 54px;
+            padding: 8px;
+            text-align: center;
+            font-size: 17px;
+            color: #fff;"
+          >
+            Test Mode
+          </h3>
+        </div>
+      </div>
+      <div class="col-2">
+        <nav class="dashboard-menu pull-right full100">
+          <ul>
+           
+            <li>
+              <a class="user">
+                <span>
+                  <i class="fas fa-user-alt"></i>
+                </span>
+              </a>
+              <div class="dropdown-area">
+                <div class="user-nameemail text-center">
+                  <img
+                    *ngIf="
+                      auth.userData.avatar && auth.userData.avatar != null;
+                      else IMG
+                    "
+                    [src]="auth.userData.avatar"
+                    class="img-fluid"
+                  />
+                  <ng-template #IMG>
+                    <img src="assets/img/logo.png" class="img-fluid" />
+                  </ng-template>
+                  <span class="mt-2"> {{ user?.email }}</span>
+                </div>
+                <div class="w-100 dashboard-submenu">
+                  <ul>
+                    <li>
+                      <a routerLink="profile">Your Profile</a>
+                    </li>
+                    <li>
+                      <a (click)="logout()">Log out</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+  

@@ -1,0 +1,44 @@
+p {
+    font-family: 'Gotham-Light';
+    font-size: 15px;
+    font-weight: 900;
+}
+
+
+span{
+    font-size: 14px;
+    font-family: 'Roboto';
+}
+.bg-grey {
+    height: 25px;
+    background-color: #eaebf1;;
+}
+
+.font-weight-bolder {
+    font-weight: 900 !important;
+    font-family: 'gotham-bold';
+}
+
+.main-box {
+
+}
+
+.btn-lg {
+    min-width: 160px;
+    font-weight: 400 !important;
+    font-size: 12px;
+    padding: 10px;
+    margin: 9px 35px;
+}
+
+.btn-sm {
+    font-weight: 300;
+    border-radius: 12px !important;
+    padding: 2px 20px;
+}
+
+@media (max-width: 991px) {
+    span {
+        display: block !important; 
+    }
+}

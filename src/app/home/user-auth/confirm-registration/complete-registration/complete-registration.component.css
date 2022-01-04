@@ -1,0 +1,63 @@
+input {
+	height: 42px;
+}
+input:hover,
+input:focus {
+	box-shadow: none;
+	border: 1px solid #333;
+}
+.need-btn {
+	background-color: #000B4D;
+	color: #fff;
+	margin-top: 35px;
+	position: absolute;
+    top: -4px;
+    margin: 0 12px;
+    margin-left: 19px;
+    font-size: 11px
+}
+.submit-btn {
+    background-color: #000B4D;
+    color: #fff;
+    margin: 0 12px;
+    margin-left: 19px;
+    font-size: 14px;
+    margin-top: 65px;
+    padding: 10px;
+}
+
+ .a-title{
+	margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+ }
+
+ .persionArray {
+	width: 100%;
+    padding: 2px 15px;
+ }
+
+ .add {
+	 cursor: pointer;
+	color: #3c89ce;
+    font-size: 15px;
+    margin-left: 15px;
+    font-weight: 500;
+ }
+ .add:hover {
+	 color:  #000B4D;
+ }
+
+ .close {
+	padding-top: 36px;
+    display: inline-block;
+    color: red;
+    font-weight: bold;
+ }
+
+ .check {
+    position: absolute;
+    right: 20px;
+    padding: 3px;
+    top: 48%;
+}

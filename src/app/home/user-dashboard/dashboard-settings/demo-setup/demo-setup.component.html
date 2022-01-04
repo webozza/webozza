@@ -1,0 +1,135 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 p-0">
+            <h5 class="section-title pl-3">Integration</h5>
+        </div>
+        <div class="col-md-12">
+            <div class="row pt-3" *ngIf="success">
+                <div class="col-md-12 p-0">
+
+                    <div *ngIf="copyIsSuccess" class="custom-copy-alert copy">
+                        Copied to Clipboard
+                    </div>
+                    <div class="col-md-12">
+                        <h3>Accept bitcoin on your WooCommerce store</h3>
+                        <p class="m--margin-top-20">Accept bitcoin in just a few minutes with the <a
+                                href="https://wordpress.org/plugins/coltpay-commerce/" target="_blank">ColtPay Commerce
+                            Payment Gateway for WooCommerce</a>.
+                            Get up and running by following these simple steps:
+                        </p>
+                        <div>
+                            <ul>
+                                <li>Download and install the ColtPay Commerce for WooCommerce payment gateway</li>
+                                <!--<li>Sign up for ColtPay Commerce</li>-->
+                                <li>Link ColtPay Commerce with your WooCommerce store</li>
+                            </ul>
+                        </div>
+                        <div class="m--margin-top-30">
+                            <h4>Download and Install ColtPay Commerce for WooCommerce</h4>
+                            <div class="row m--margin-top-20">
+                                <div class="col-md-3"><img src="./assets/img/home/woocommerce-plugin-sidebar.png"
+                                                           class="img-fluid"></div>
+                                <div class="col-md-9">
+                                    To download and install the <a
+                                        href="https://wordpress.org/plugins/coltpay-commerce/" target="_blank">ColtPay
+                                    Commerce Payment Gateway for WooCommerce</a>,
+                                    <br/> navigate to <strong>Plugins > Add New</strong> within your WordPress admin
+                                    page.
+                                </div>
+                            </div>
+                            <div class="row m--margin-top-20">
+                                <div class="col-md-12">Search for "ColtPay Commerce". You should see the ColtPay
+                                    Commerce
+                                    Payment Gateway
+                                    for WooCommerce as a top result. Click on the Install Now button to install the
+                                    plugin.
+                                    Once it has been installed, click Activate:
+                                </div>
+                                <div class="col-md-12 m--margin-top-20">
+                                    <img src="./assets/img/home/woocommerce-install-plugin.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m--margin-top-30">
+                            <h4>Link ColtPay Commerce with your WooCommerce Store</h4>
+                            <div class="row m--margin-top-20">
+                                <div class="col-md-12">
+
+                                    <p>Within the WordPress administration area, go to the <strong>WooCommerce >
+                                        Settings > Payments</strong>
+                                        page and you will see ColtPay in the list of available payment gateways.</p>
+                                    <p class="m--margin-top-20">
+                                        <img src="./assets/img/home/woocommerce-payment-list.png" class="img-fluid"/>
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div class="row m--margin-top-20">
+                                <div class="col-md-12">
+                                    <p>Click on the Manage button on the right hand side. This will take you to the
+                                        settings
+                                        page,
+                                        where you can configure the plugin for your store. You should see something like
+                                        this:
+                                    </p>
+                                    <p>
+                                        <img src="./assets/img/home/woocommerce-manage-api.png" class="img-fluid">
+                                    </p>
+                                    <p>To link your accounts, you’ll need to add API Key from your coltpay account.</p>
+                                    <p>You will get your API Key from your ColtPay Merchant account. Go to <strong>Settings > Api Reference</strong></p>
+                                    <p>
+                                        <img src="./assets/img/home/woocommerce-api-reference.png" class="img-fluid">
+
+                                    </p>
+                                    <p><strong>That’s it! Your customers are now able to checkout and pay with Bitcoin</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<h5>ColtPay Payment Box</h5>-->
+                    <!--<button (click)="copyToClipboard('html')" class="btn copy-btn mt-3">-->
+                    <!--Copy-->
+                    <!--</button>-->
+                    <!--<p>Insert this code in your payment </p>-->
+                    <!--<pre> {{ widget_html }}</pre>-->
+                </div>
+                <!--<div class="col-md-12">-->
+                    <!--&lt;!&ndash;<button (click)="copyToClipboard('script')" class="btn copy-btn mt-3">&ndash;&gt;-->
+                    <!--&lt;!&ndash;Copy&ndash;&gt;-->
+                    <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                    <!--<p>Insert this code end of body </p>-->
+                    <!--<pre> {{ widgetScript }} </pre>-->
+                <!--</div>-->
+            </div>
+            <!--<div class="col-md-12 p-0">-->
+
+                <!--<div *ngIf="copyIsSuccess" class="custom-copy-alert copy">-->
+                    <!--Copied to Clipboard-->
+                <!--</div>-->
+                <!--<div class="col-md-12">-->
+                    <!--<h5>ColtPay Payment Button</h5>-->
+                    <!--&lt;!&ndash;<button (click)="copyToClipboard('html1')" class="btn copy-btn mt-3">&ndash;&gt;-->
+                    <!--&lt;!&ndash;Copy&ndash;&gt;-->
+                    <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                    <!--<p>Insert this code in your payment </p>-->
+                    <!--<pre> {{ widget_html_button }}</pre>-->
+                <!--</div>-->
+                <!--<div class="col-md-12">-->
+                    <!--&lt;!&ndash;<button (click)="copyToClipboard('script1')" class="btn copy-btn mt-3">&ndash;&gt;-->
+                    <!--&lt;!&ndash;Copy&ndash;&gt;-->
+                    <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                    <!--<p>Insert this code end of body </p>-->
+                    <!--<pre> {{ widgetScript }} </pre>-->
+                <!--</div>-->
+            <!--</div>-->
+
+
+        </div>
+        <!--<div class="row p-5" *ngIf="error">-->
+            <!--<div class="custom-alert">-->
+                <!--<p>{{ errorMessage }}</p>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>
+<div>&nbsp;&nbsp;</div>

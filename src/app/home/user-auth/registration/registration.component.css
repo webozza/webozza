@@ -1,0 +1,19 @@
+.check-email {
+    position: absolute;
+    right: 0;
+    padding: 3px;
+}
+.alert-danger {
+    top: 0 !important;
+}
+
+.custom-alert {
+    position: absolute
+}
+
+
+.terms-conditions {
+    font-size: 10px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+}

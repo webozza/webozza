@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="com-md-12">
+            <h1 *ngIf="content">{{content.label}}</h1>
+            <div class="content-wrap" *ngIf="content" [innerHTML]="content.description | safeHtml"></div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div  class="col-md-8" #hasAlert></div>
+    </div>
+    <div class="row mt-5 justify-content-center">
+     <div class="col-md-8">
+        <input type="checkbox" [formControl]="isChecked" name="" id=""> I have read and agree to the Terms & Conditions
+        <button class="btn " [disabled]="!isChecked.value" (click)="submit()"><span>Continue</span>   <i *ngIf="submitting" class="fa fa-spinner ml-2 fa-spin"></i></button>
+     </div>
+    </div>
+</div>
